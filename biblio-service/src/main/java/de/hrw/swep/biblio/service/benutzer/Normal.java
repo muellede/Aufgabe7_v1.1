@@ -21,7 +21,7 @@ public class Normal implements Benutzerstatus {
 
 	public void freischalten() {
 		// TODO Status�bergang
-		throw new IllegalStateException();
+		throw new IllegalStateTransition();
 	}
 
 }
