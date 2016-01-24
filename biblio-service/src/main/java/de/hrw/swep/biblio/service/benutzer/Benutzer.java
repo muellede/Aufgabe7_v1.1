@@ -26,7 +26,7 @@ public class Benutzer {
 		super();
 		this.id = id;
 		this.name = name;
-		this.gebuehren= new ArrayList<Gebuehr>();
+		this.gebuehren = new ArrayList<Gebuehr>();
 		this.status = new Normal(this);
 	}
 	

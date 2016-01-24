@@ -17,7 +17,8 @@ public class Gesperrt implements Benutzerstatus{
 	}
 
 	public void freischalten() {
-		// TODO Statusübergang
+		// TODO Statusï¿½bergang
+		benutzer.setStatus(new Normal(benutzer));
 	}
 
 }

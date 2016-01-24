@@ -16,7 +16,7 @@ public class BibliothekTestMitMock {
 	 */
 	@Test
 	public void testSucheBuchNachTitel() {
-		fail("Not yet implemented");
+		fail("2");
 	}
 
 	/**

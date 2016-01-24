@@ -1,6 +1,6 @@
 package de.hrw.swep.biblio.service.benutzer;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -23,7 +23,7 @@ public class BenutzerStatusTest {
 		Benutzer b = new Benutzer(1, "TestUser");
 		b.setStatus(new Normal(b));
 		
-		b.mahnen(new Gebuehr("Testgebühr", 100));
+		b.mahnen(new Gebuehr("Testgebï¿½hr", 100));
 		assertEquals("de.hrw.swep.biblio.service.benutzer.Gesperrt", b.getStatus().getClass().getName());
 	}
 

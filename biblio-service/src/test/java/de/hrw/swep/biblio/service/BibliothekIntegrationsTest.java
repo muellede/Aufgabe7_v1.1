@@ -16,7 +16,7 @@ public class BibliothekIntegrationsTest {
 	 */
 	@Test
 	public void testSucheBuchNachTitel() {
-		fail("Not yet implemented");
+		fail("1");
 	}
 
 	/**
