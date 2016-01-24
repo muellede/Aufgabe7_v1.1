@@ -12,7 +12,7 @@ import de.hrw.swep.biblio.persistence.dto.BuchDTO;
 import de.hrw.swep.biblio.persistence.dto.GebuehrDTO;
 
 /**
- * Zugriffsklasse für die Bibliotheks-Datenbank
+ * Zugriffsklasse fï¿½r die Bibliotheks-Datenbank
  * @author M. Friedrich
  *
  */
@@ -69,10 +69,10 @@ public class DAO implements DBInterface {
    */
   public Set<BenutzerDTO> getBenutzerByName(String name) {
     Set<BenutzerDTO> result = new HashSet<BenutzerDTO>();
-    ResultSet result_set = executeQuery("SELECT * FROM USER WHERE name=\'" + name + "\'");
+    ResultSet resultSet = executeQuery("SELECT * FROM USER WHERE name=\'" + name + "\'");
     try {
-      while (result_set.next()) {
-        result.add(new BenutzerDTO(result_set.getInt(1), result_set.getString(2), result_set.getString(3)));
+      while (resultSet.next()) {
+        result.add(new BenutzerDTO(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3)));
       }
       return result;
     } catch (SQLException e) {
@@ -113,7 +113,7 @@ public class DAO implements DBInterface {
     ResultSet rs = executeQuery("SELECT id,autor,titel,status FROM BUCH WHERE titel LIKE \'%"
         + title + "%\'");
     try {
-      while ( rs.next() ) {
+      while (rs.next()) {
         result.add(new BuchDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4)));
       }
       return result;
