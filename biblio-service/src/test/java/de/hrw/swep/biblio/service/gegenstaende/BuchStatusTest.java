@@ -1,3 +1,4 @@
+//CHECKSTYLE:OFF
 package de.hrw.swep.biblio.service.gegenstaende;
 
 import static org.junit.Assert.*;
