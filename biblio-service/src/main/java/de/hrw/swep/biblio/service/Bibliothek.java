@@ -84,7 +84,43 @@ public class Bibliothek {
 	 * @return die Buchobjekte
 	 */
 	public Set<Buch> sucheBuchNachAutor(String autor) {
-		return null;
+		HashSet<Buch> result = new HashSet<Buch>();
+		for (BuchDTO buch : db.getBuchByAutor(autor)) {
+			Buch b = new Buch(buch.getTitel(), buch.getAutor());
+			try {
+				try {
+					b.setState((Ausleihstatus) Class
+							.forName(
+									"de.hrw.swep.biblio.service.gegenstaende."
+											+ buch.getStatus())
+							.getDeclaredConstructor(Gegenstand.class)
+							.newInstance(b));
+				} catch (IllegalArgumentException e) {
+
+					e.printStackTrace();
+				} catch (InvocationTargetException e) {
+
+					e.printStackTrace();
+				} catch (NoSuchMethodException e) {
+
+					e.printStackTrace();
+				} catch (SecurityException e) {
+
+					e.printStackTrace();
+				}
+			} catch (InstantiationException e) {
+
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) {
+
+				e.printStackTrace();
+			}
+			result.add(b);
+		}
+		return result;
 
 	}
 
